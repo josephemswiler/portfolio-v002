@@ -43,8 +43,8 @@ export default class HomeCard extends Component {
           <CardTitle style={this.style().title}>
             Full Stack Web & Mobile Developer
           </CardTitle>
-          <Button block style={this.style().button}>Web & Mobile Applications</Button>
-          <Button block style={this.style().button}>UI / UX Explorations</Button>
+          <Button block style={this.style().button}>Web & Mobile Applications →</Button>
+          <Button block style={this.style().button}>← UI / UX Explorations</Button>
         </CardBody>
       </Card>
     )

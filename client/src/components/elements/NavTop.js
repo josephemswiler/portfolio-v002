@@ -12,9 +12,8 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(fas, fab)
+library.add(fas)
 
 export default class NavTop extends React.Component {
   constructor (props) {
@@ -49,7 +48,7 @@ export default class NavTop extends React.Component {
     })
   }
 
-  styles = () => ({
+  style = () => ({
     navbar: {
       justifyContent: 'center',
       alignContent: 'center',
@@ -60,14 +59,14 @@ export default class NavTop extends React.Component {
     },
     brand: {
       position: 'absolute',
-      top: '.25rem',
+      top: 0
     },
     icon: {
-      fontSize: '20px'
+      fontSize: 20
     },
     toggler: {
       fontSize: '20px',
-      outline: 'none'
+      outline: 'none',
     }
   })
 
@@ -77,11 +76,11 @@ export default class NavTop extends React.Component {
     
     return (
       <div>
-        <Navbar style={this.styles().navbar} className='transparent fixed-top' dark expand='md'>
-          <Link style={this.styles().brand} className='navbar-brand' to='/'>
-            Joseph Emswiler
+        <Navbar style={this.style().navbar} className='transparent fixed-top' dark expand='md'>
+          <Link style={this.style().brand} className='navbar-brand mt-2 mt-md-3' to='/'>
+            Joseph Emswiler 
           </Link>
-          <NavbarToggler style={this.styles().toggler} className='mr-auto border-0' onClick={this.toggle}>
+          <NavbarToggler style={this.style().toggler} className='mr-auto border-0' onClick={this.toggle}>
             <FontAwesomeIcon
               icon={['fas', toggleIcon]}
             />
