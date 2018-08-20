@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'bootswatch/dist/materia/bootstrap.css'
+import NavTop from './components/elements/NavTop'
+import NavBottom from './components/elements/NavBottom'
+import HomePage from './pages/HomePage'
+
 
 class App extends Component {
   render () {
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Welcome to React</h1>
-        </header>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <Router>
+      <div>
+        <NavTop />
+        <Switch>
+          <Route path='/' component={HomePage} />
+        </Switch>
+        <NavBottom />
       </div>
+    </Router>
     )
   }
 }
