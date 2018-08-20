@@ -56,6 +56,7 @@ export default class NavTop extends React.Component {
       boxShadow: 'none',
       fontFamily: `'Nunito', sans-serif`,
       color: '#fff',
+      fontWeight: 300
     },
     brand: {
       position: 'absolute',
@@ -66,32 +67,59 @@ export default class NavTop extends React.Component {
     },
     toggler: {
       fontSize: '20px',
-      outline: 'none',
+      outline: 'none'
+    },
+    link: {
+      fontSize: 16,
+      color: '#fff',
+      fontWeight: 400
     }
   })
 
   render () {
-
     let toggleIcon = this.state.isOpen ? 'angle-up' : 'angle-down'
-    
+
     return (
       <div>
-        <Navbar style={this.style().navbar} className='transparent fixed-top' dark expand='md'>
-          <Link style={this.style().brand} className='navbar-brand mt-2 mt-md-3' to='/'>
-            Joseph Emswiler 
+        <Navbar
+          style={this.style().navbar}
+          className='transparent fixed-top'
+          dark
+          expand='md'
+        >
+          <Link
+            style={this.style().brand}
+            className='navbar-brand mt-2 mt-md-3'
+            to='/'
+          >
+            Joseph Emswiler
           </Link>
-          <NavbarToggler style={this.style().toggler} className='mr-auto border-0' onClick={this.toggle}>
-            <FontAwesomeIcon
-              icon={['fas', toggleIcon]}
-            />
+          <NavbarToggler
+            style={this.style().toggler}
+            className='mr-auto border-0'
+            onClick={this.toggle}
+          >
+            <FontAwesomeIcon icon={['fas', toggleIcon]} />
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-auto' navbar>
               <NavItem>
-                <Link className='nav-link' to='/projects/'>Projects</Link>
+                <Link
+                  className='nav-link'
+                  style={this.style().link}
+                  to='/projects/'
+                >
+                  Projects
+                </Link>
               </NavItem>
               <NavItem>
-                <Link className='nav-link' to='/about'>About</Link>
+                <Link
+                  className='nav-link'
+                  style={this.style().link}
+                  to='/about'
+                >
+                  About
+                </Link>
               </NavItem>
             </Nav>
           </Collapse>
