@@ -107,7 +107,7 @@ export default class NavTop extends React.Component {
                 <Link
                   className='nav-link'
                   style={this.style().link}
-                  to='/projects/'
+                  to='/projects'
                 >
                   Projects
                 </Link>

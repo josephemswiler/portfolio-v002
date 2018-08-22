@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import {
   Card,
   CardText,
@@ -7,6 +8,7 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap'
+
 
 export default class HomeCard extends Component {
   style = () => ({
@@ -30,6 +32,10 @@ export default class HomeCard extends Component {
       textAlign: 'justify',
       marginBottom: 0
     },
+    link: {
+      width: '100%',
+      textDecoration: 'none'
+    },
     button: {
       marginTop: '1.25rem',
       padding: 15,
@@ -43,8 +49,12 @@ export default class HomeCard extends Component {
           <CardTitle style={this.style().title}>
             Full Stack Web & Mobile Developer
           </CardTitle>
+          <Link to='/projects/apps' style={this.style().link}>
           <Button block style={this.style().button}>Web & Mobile Applications →</Button>
+          </Link>
+          <Link to='/projects/ui-ux' style={this.style().link}>
           <Button block style={this.style().button}>← UI / UX Explorations</Button>
+          </Link>
         </CardBody>
       </Card>
     )
